@@ -1,0 +1,23 @@
+[33mcommit 870c5a4062230ce6b8a17877b45b898deb1b557d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: thoangtran20 <thoangtran20@gmail.com>
+Date:   Sun Dec 24 13:41:09 2023 +0700
+
+    Update code - use toastr to show message when create - update - delete category successfully
+
+[33mcommit 74c953e8ab7917e3aaff7880b33cb8b119c5669f[m
+Author: thoangtran20 <thoangtran20@gmail.com>
+Date:   Sat Dec 23 13:51:49 2023 +0700
+
+    Update code - Apply Bootswatch Theme and Bootstrap Icons to project - Update CategoryController - CRUD Category and Validate - Add some new file
+
+[33mcommit 5d514b8febf499b1523589d5f513318e4a7f5b52[m
+Author: thoangtran20 <thoangtran20@gmail.com>
+Date:   Thu Dec 21 23:25:53 2023 +0700
+
+    Update code - create database - Add ApplicationDbContext - install EntityFrameworkCore - Create caregory controller - get and show categories
+
+[33mcommit add4d3b15d7cdb762946cb6eaf02d5d4945b0ab5[m
+Author: thoangtran20 <thoangtran20@gmail.com>
+Date:   Wed Dec 20 11:11:38 2023 +0700
+
+    Set up Project - BookStore
