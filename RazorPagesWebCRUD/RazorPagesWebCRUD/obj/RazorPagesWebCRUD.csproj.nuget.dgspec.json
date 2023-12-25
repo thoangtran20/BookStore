@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ASP_NET_CORE_6.0\\Project\\RazorPagesWebCRUD\\RazorPagesWebCRUD\\RazorPagesWebCRUD.csproj": {}
+    "D:\\ASP.NET_CORE_6.0\\RazorPagesWebCRUD\\RazorPagesWebCRUD\\RazorPagesWebCRUD.csproj": {}
   },
   "projects": {
-    "D:\\ASP_NET_CORE_6.0\\Project\\RazorPagesWebCRUD\\RazorPagesWebCRUD\\RazorPagesWebCRUD.csproj": {
+    "D:\\ASP.NET_CORE_6.0\\RazorPagesWebCRUD\\RazorPagesWebCRUD\\RazorPagesWebCRUD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ASP_NET_CORE_6.0\\Project\\RazorPagesWebCRUD\\RazorPagesWebCRUD\\RazorPagesWebCRUD.csproj",
+        "projectUniqueName": "D:\\ASP.NET_CORE_6.0\\RazorPagesWebCRUD\\RazorPagesWebCRUD\\RazorPagesWebCRUD.csproj",
         "projectName": "RazorPagesWebCRUD",
-        "projectPath": "D:\\ASP_NET_CORE_6.0\\Project\\RazorPagesWebCRUD\\RazorPagesWebCRUD\\RazorPagesWebCRUD.csproj",
+        "projectPath": "D:\\ASP.NET_CORE_6.0\\RazorPagesWebCRUD\\RazorPagesWebCRUD\\RazorPagesWebCRUD.csproj",
         "packagesPath": "C:\\Users\\THOANG\\.nuget\\packages\\",
-        "outputPath": "D:\\ASP_NET_CORE_6.0\\Project\\RazorPagesWebCRUD\\RazorPagesWebCRUD\\obj\\",
+        "outputPath": "D:\\ASP.NET_CORE_6.0\\RazorPagesWebCRUD\\RazorPagesWebCRUD\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\THOANG\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,11 +40,21 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.0, )"
             }
