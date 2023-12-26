@@ -5,18 +5,19 @@ using RazorPagesWebCRUD.Model;
 
 namespace RazorPagesWebCRUD.Pages.Categories
 {
-    public class CreateModel : PageModel
+    public class EditModel : PageModel
     {
         private readonly ApplicationDbContext _db;
         public Category category { get; set; }
 
-        public CreateModel(ApplicationDbContext db)
+        public EditModel(ApplicationDbContext db)
         {
             _db = db; 
         }
-        public void OnGet()
+        public void OnGet(int id)
         {
-
+            category = _db.Categories.Find(id);
+            //category = _db.Categories.SingleOrDefault(a => a.Id == id);
         }
 
         public async Task<IActionResult> OnPost(Category category)
@@ -27,9 +28,9 @@ namespace RazorPagesWebCRUD.Pages.Categories
             } 
             if (ModelState.IsValid)
             {
-                await _db.Categories.AddAsync(category);
+                _db.Categories.Update(category);
                 await _db.SaveChangesAsync();
-                TempData["success"] = "Create category successfully";
+                TempData["success"] = "Edit category successfully";
                 return RedirectToPage("index");
             }
             return Page();

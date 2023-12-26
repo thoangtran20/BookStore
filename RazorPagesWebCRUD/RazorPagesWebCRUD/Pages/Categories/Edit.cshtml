@@ -1,9 +1,10 @@
 ﻿@page
-@model RazorPagesWebCRUD.Pages.Categories.CreateModel
+@model RazorPagesWebCRUD.Pages.Categories.EditModel
 
 <form method="post">
+    <input hidden asp-for="category.Id" />
     <div class="border-bottom pd-2">
-        <h2 class="text-primary pl-3 mt-3">Create Category</h2>
+        <h2 class="text-primary pl-3 mt-3">Edit Category</h2>
     </div>
     <div asp-validation-summary="All"></div>
     <div class="mb-3">
@@ -16,7 +17,7 @@
         <input asp-for="category.DisplayOrder" class="form-control" />
         <span asp-validation-for="category.DisplayOrder" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Create</button>
+    <button type="submit" class="btn btn-primary">Update</button>
     <a asp-page="Index" class="btn btn-secondary">Back to List</a>
 </form>
 
