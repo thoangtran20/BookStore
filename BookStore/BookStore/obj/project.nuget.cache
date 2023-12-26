@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1tZ0I63RV0/NVguESI/szwIKtYSmX/UWGFlXwHqkAtLCmQqPOk8r2fsL2tQuK0KuXQ4GO8uNqDrC8rOZNlf0eA==",
+  "dgSpecHash": "q8sEkInn0/sgSzlAl+ziUqj0c5N7ZQqimXdo/lx9rMkP9y0+Asqh0lq8YdS99g8EYobk3NDyig0nnBGoucXDXQ==",
   "success": true,
-  "projectFilePath": "D:\\ASP_NET_CORE_6.0\\Project\\BookStore\\BookStore\\BookStore.csproj",
+  "projectFilePath": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\THOANG\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\THOANG\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

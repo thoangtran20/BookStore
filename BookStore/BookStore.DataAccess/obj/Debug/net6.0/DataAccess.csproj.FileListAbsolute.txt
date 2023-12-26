@@ -1,0 +1,5 @@
+D:\ASP.NET_CORE_6.0\BookStore\BookStore.DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+D:\ASP.NET_CORE_6.0\BookStore\BookStore.DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET_CORE_6.0\BookStore\BookStore.DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+D:\ASP.NET_CORE_6.0\BookStore\BookStore.DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+D:\ASP.NET_CORE_6.0\BookStore\BookStore.DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache

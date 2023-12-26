@@ -3775,6 +3775,32 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "BookStore.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BookStore.Models": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BookStore.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookStore.DataAccess.dll": {}
+        }
+      },
+      "BookStore.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BookStore.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookStore.Models.dll": {}
+        }
       }
     }
   },
@@ -10787,10 +10813,21 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "BookStore.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../BookStore.DataAccess/BookStore.DataAccess.csproj",
+      "msbuildProject": "../BookStore.DataAccess/BookStore.DataAccess.csproj"
+    },
+    "BookStore.Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/BookStore.Models.csproj",
+      "msbuildProject": "../Models/BookStore.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BookStore.DataAccess >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.0",
@@ -10804,11 +10841,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ASP_NET_CORE_6.0\\Project\\BookStore\\BookStore\\BookStore.csproj",
+      "projectUniqueName": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\BookStore.csproj",
       "projectName": "BookStore",
-      "projectPath": "D:\\ASP_NET_CORE_6.0\\Project\\BookStore\\BookStore\\BookStore.csproj",
+      "projectPath": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\BookStore.csproj",
       "packagesPath": "C:\\Users\\THOANG\\.nuget\\packages\\",
-      "outputPath": "D:\\ASP_NET_CORE_6.0\\Project\\BookStore\\BookStore\\obj\\",
+      "outputPath": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\THOANG\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10824,7 +10861,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore.DataAccess\\BookStore.DataAccess.csproj": {
+              "projectPath": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore.DataAccess\\BookStore.DataAccess.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

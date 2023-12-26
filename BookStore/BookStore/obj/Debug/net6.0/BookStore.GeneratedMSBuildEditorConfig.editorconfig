@@ -9,57 +9,57 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BookStore
 build_property.RootNamespace = BookStore
-build_property.ProjectDir = D:\ASP_NET_CORE_6.0\Project\BookStore\BookStore\
+build_property.ProjectDir = D:\ASP.NET_CORE_6.0\BookStore\BookStore\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = D:\ASP_NET_CORE_6.0\Project\BookStore\BookStore
+build_property.MSBuildProjectDirectory = D:\ASP.NET_CORE_6.0\BookStore\BookStore
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/ASP_NET_CORE_6.0/Project/BookStore/BookStore/Views/Category/Create.cshtml]
+[D:/ASP.NET_CORE_6.0/BookStore/BookStore/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE_6.0/Project/BookStore/BookStore/Views/Category/Delete.cshtml]
+[D:/ASP.NET_CORE_6.0/BookStore/BookStore/Views/Category/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE_6.0/Project/BookStore/BookStore/Views/Category/Edit.cshtml]
+[D:/ASP.NET_CORE_6.0/BookStore/BookStore/Views/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE_6.0/Project/BookStore/BookStore/Views/Category/Index.cshtml]
+[D:/ASP.NET_CORE_6.0/BookStore/BookStore/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE_6.0/Project/BookStore/BookStore/Views/Home/Index.cshtml]
+[D:/ASP.NET_CORE_6.0/BookStore/BookStore/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE_6.0/Project/BookStore/BookStore/Views/Home/Privacy.cshtml]
+[D:/ASP.NET_CORE_6.0/BookStore/BookStore/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE_6.0/Project/BookStore/BookStore/Views/Shared/Error.cshtml]
+[D:/ASP.NET_CORE_6.0/BookStore/BookStore/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE_6.0/Project/BookStore/BookStore/Views/Shared/_Notification.cshtml]
+[D:/ASP.NET_CORE_6.0/BookStore/BookStore/Views/Shared/_Notification.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob3RpZmljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE_6.0/Project/BookStore/BookStore/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/ASP.NET_CORE_6.0/BookStore/BookStore/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE_6.0/Project/BookStore/BookStore/Views/_ViewImports.cshtml]
+[D:/ASP.NET_CORE_6.0/BookStore/BookStore/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE_6.0/Project/BookStore/BookStore/Views/_ViewStart.cshtml]
+[D:/ASP.NET_CORE_6.0/BookStore/BookStore/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ASP_NET_CORE_6.0/Project/BookStore/BookStore/Views/Shared/_Layout.cshtml]
+[D:/ASP.NET_CORE_6.0/BookStore/BookStore/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-tqf8g8k84y

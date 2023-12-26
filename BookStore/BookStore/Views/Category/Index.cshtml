@@ -15,15 +15,15 @@
     <br />
     <table class="table table-bordered table-striped">
         <thead>
-        <th class="text-white">Category Name</th>
-        <th class="text-white">Category Order</th>
+        <th>Category Name</th>
+        <th>Category Order</th>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td class="text-white">@item.Name</td>
-                    <td class="text-white">@item.DisplayOrder</td>
+                    <td>@item.Name</td>
+                    <td>@item.DisplayOrder</td>
                     <td>
                         <div>
                             <a class="btn btn-primary m-1" asp-controller="Category" asp-action="Edit" asp-route-id=@item.Id>

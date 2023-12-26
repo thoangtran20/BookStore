@@ -1,4 +1,4 @@
-using BookStore.Data;
+using BookStore.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +10,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(
                 builder.Configuration.GetConnectionString("DefaultConnection")
      ));
 
-//builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 var app = builder.Build();
 
