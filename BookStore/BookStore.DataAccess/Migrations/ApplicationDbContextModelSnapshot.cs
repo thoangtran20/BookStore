@@ -91,6 +91,9 @@ namespace BookStore.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("ListPrice")
+                        .HasColumnType("float");
+
                     b.Property<double>("Price100")
                         .HasColumnType("float");
 

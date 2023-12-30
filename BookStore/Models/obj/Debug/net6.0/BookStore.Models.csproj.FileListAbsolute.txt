@@ -9,3 +9,4 @@ D:\ASP.NET_CORE_6.0\BookStore\Models\obj\Debug\net6.0\BookStore.Models.dll
 D:\ASP.NET_CORE_6.0\BookStore\Models\obj\Debug\net6.0\refint\BookStore.Models.dll
 D:\ASP.NET_CORE_6.0\BookStore\Models\obj\Debug\net6.0\BookStore.Models.pdb
 D:\ASP.NET_CORE_6.0\BookStore\Models\obj\Debug\net6.0\ref\BookStore.Models.dll
+D:\ASP.NET_CORE_6.0\BookStore\Models\obj\Debug\net6.0\BookStore.Models.csproj.AssemblyReference.cache

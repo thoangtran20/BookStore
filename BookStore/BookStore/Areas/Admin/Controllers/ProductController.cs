@@ -1,7 +1,9 @@
 ﻿using BookStore.DataAccess.Data;
 using BookStore.DataAccess.Repository.IRepository;
 using BookStore.Models;
+using BookStore.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BookStore.Areas.Admin.Controllers
 {
@@ -19,49 +21,71 @@ namespace BookStore.Areas.Admin.Controllers
             IEnumerable<Product> objProductList = _unitOfWork.Product.GetAll();
             return View(objProductList);
         }
-        public IActionResult Create()
+        public IActionResult Upsert(int? id)
         {
-            return View();
-        }
+            ProductVM productVM = new ProductVM();
+            productVM.product = new Product();
+            productVM.CategoryList = _unitOfWork.Category.GetAll().Select(
+                    u => new SelectListItem()
+                    {
+                        Text = u.Name,
+                        Value = u.Id.ToString()
+                    }
+                );
 
-        // post
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create(Product obj)
-        {
-            if (ModelState.IsValid)
-            {
-                _unitOfWork.Product.Add(obj);
-                _unitOfWork.Save();
-                TempData["Success"] = "Product Create Successfully";
-                return RedirectToAction("index");
-            }
-            return View(obj);
-        }
+            productVM.CoverTypeList = _unitOfWork.CoverType.GetAll().Select(
+                    u => new SelectListItem()
+                    {
+                        Text = u.Name,
+                        Value = u.Id.ToString()
+                    }
+                );
 
-        public IActionResult Edit(int? id)
-        {
+            //IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category.GetAll().Select(
+            //        u => new SelectListItem()
+            //        {
+            //            Text = u.Name,
+            //            Value = u.Id.ToString()
+            //        }
+            //    );
+
+            //IEnumerable<SelectListItem> CoverTypeList = _unitOfWork.CoverType.GetAll().Select(
+            //       u => new SelectListItem()
+            //       {
+            //           Text = u.Name,
+            //           Value = u.Id.ToString()
+            //       }
+            //   );
+
             if (id == null || id == 0)
             {
-                return NotFound();
+                // Create product
+                //ViewBag.CategoryList = CategoryList;
+                //ViewData["CoverTypeList"] = CoverTypeList;
+                return View(productVM);
             }
-            var productFromDB = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
-
-            if (productFromDB == null)
+            else
             {
-                return NotFound();
+                // Update product
+                productVM.product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
             }
-            return View(productFromDB);
+            //var productFromDB = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
+
+            //if (productFromDB == null)
+            //{
+            //    return NotFound();
+            //}
+            return View(productVM);
         }
 
         // post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Product obj)
+        public IActionResult Upsert(ProductVM obj, IFormFile file)
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.Product.Update(obj);
+                _unitOfWork.Product.Update(obj.product);
                 _unitOfWork.Save();
                 TempData["Success"] = "Product Update Successfully";
                 return RedirectToAction("index");

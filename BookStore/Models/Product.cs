@@ -22,6 +22,9 @@ namespace BookStore.Models
         public string Author { get; set; }
         [Required]
         [Range(1, 100000000)]
+        public double ListPrice { get; set; }
+        [Required]
+        [Range(1, 100000000)]
         public double Price50 { get; set; }
         [Required]
         [Range(1, 100000000)]
