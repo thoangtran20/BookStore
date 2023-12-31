@@ -17,6 +17,8 @@ namespace BookStore.DataAccess.Repository
         public ProductRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
+            //_dbContext.Products.Include(u => u.Category).Include(u => u.CoverType);
+            
         }
 
         public void Update(Product product)

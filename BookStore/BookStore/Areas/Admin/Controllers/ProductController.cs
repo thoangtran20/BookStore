@@ -11,10 +11,11 @@ namespace BookStore.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-
-        public ProductController(IUnitOfWork unitOfWork)
+        private IWebHostEnvironment _webHostEnvironment;
+        public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
         {
             _unitOfWork = unitOfWork;
+            _webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Index()
         {
@@ -41,27 +42,9 @@ namespace BookStore.Areas.Admin.Controllers
                     }
                 );
 
-            //IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category.GetAll().Select(
-            //        u => new SelectListItem()
-            //        {
-            //            Text = u.Name,
-            //            Value = u.Id.ToString()
-            //        }
-            //    );
-
-            //IEnumerable<SelectListItem> CoverTypeList = _unitOfWork.CoverType.GetAll().Select(
-            //       u => new SelectListItem()
-            //       {
-            //           Text = u.Name,
-            //           Value = u.Id.ToString()
-            //       }
-            //   );
-
             if (id == null || id == 0)
             {
                 // Create product
-                //ViewBag.CategoryList = CategoryList;
-                //ViewData["CoverTypeList"] = CoverTypeList;
                 return View(productVM);
             }
             else
@@ -69,25 +52,33 @@ namespace BookStore.Areas.Admin.Controllers
                 // Update product
                 productVM.product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
             }
-            //var productFromDB = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
-
-            //if (productFromDB == null)
-            //{
-            //    return NotFound();
-            //}
             return View(productVM);
         }
 
         // post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upsert(ProductVM obj, IFormFile file)
+        public IActionResult Upsert(ProductVM obj, IFormFile? file)
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.Product.Update(obj.product);
+                // upload images
+                string wwwRootPath = _webHostEnvironment.WebRootPath;
+                if (file != null)
+                {
+                    string fileName = Guid.NewGuid().ToString();
+                    var uploads = Path.Combine(wwwRootPath, @"images\products");
+                    var extension = Path.GetExtension(file.FileName);
+                    using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                    {
+                        file.CopyTo(fileStreams);
+                    }
+                    obj.product.ImageUrl = @"images\products\" + fileName + extension;
+                }
+
+                _unitOfWork.Product.Add(obj.product);
                 _unitOfWork.Save();
-                TempData["Success"] = "Product Update Successfully";
+                TempData["Success"] = "Product create Successfully";
                 return RedirectToAction("index");
             }
             return View(obj);
@@ -128,5 +119,14 @@ namespace BookStore.Areas.Admin.Controllers
             }
             return View(obj);
         }
+
+        #region API_CALLS
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var productList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
+            return Json(new {data = productList});
+        }
+        #endregion
     }
 }

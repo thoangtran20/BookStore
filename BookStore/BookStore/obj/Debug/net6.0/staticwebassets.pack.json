@@ -17,6 +17,26 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\6019582f-1489-4ad4-a946-80c710523f91.png",
+      "PackagePath": "staticwebassets\\images\\products\\6019582f-1489-4ad4-a946-80c710523f91.png"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\7bb1b607-01e8-47c1-92d9-6e06b0c00733.png",
+      "PackagePath": "staticwebassets\\images\\products\\7bb1b607-01e8-47c1-92d9-6e06b0c00733.png"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\a29593b1-218c-4596-a898-b704179eaa55.png",
+      "PackagePath": "staticwebassets\\images\\products\\a29593b1-218c-4596-a898-b704179eaa55.png"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\e17a4517-c402-4e5b-95d3-ad64d0aa45b5.png",
+      "PackagePath": "staticwebassets\\images\\products\\e17a4517-c402-4e5b-95d3-ad64d0aa45b5.png"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\product.js",
+      "PackagePath": "staticwebassets\\js\\product.js"
+    },
+    {
       "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

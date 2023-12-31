@@ -13,37 +13,18 @@
     </div>
     <br />
     <br />
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered" id="tblData">
         <thead>
             <th>Title</th>
             <th>ISBN</th>
-            <th>Price50</th>
             <th>Author</th>
             <th>Category</th>
-
+            <th></th>
         </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.Title</td>
-                    <td>@item.ISBN</td>
-                    <td>@item.Price50</td>
-                    <td>@item.Author</td>
-                    <td>@item.Category</td>
-
-                    <td>
-                        <div>
-                            <a class="btn btn-primary m-1" asp-controller="Product" asp-action="Edit" asp-route-id=@item.Id>
-                                <i class="bi bi-pencil"></i>
-                            </a>
-                            <a class="btn btn-primary m-1" asp-controller="Product" asp-action="Delete" asp-route-id=@item.Id>
-                                <i class="bi bi-trash"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            }
-        </tbody>
+       
     </table>
 </div>
+
+@section Scripts{
+    <script src="~/js/product.js"></script>
+}

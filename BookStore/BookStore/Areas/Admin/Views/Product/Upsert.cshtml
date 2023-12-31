@@ -1,6 +1,6 @@
 ﻿@model BookStore.Models.ViewModel.ProductVM
 
-<form method="post" asp-action="Edit" enctype="multipart/form-data">
+<form method="post" asp-action="Upsert" enctype="multipart/form-data">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
             <h2>@(Model.product.Id==0?"Create":"Edit") product</h2>
@@ -49,30 +49,22 @@
             </div>
         </div>
        
-        <div class="mb-3 col-6 w-100">
+        <div class="mb-3">
             <label asp-for=product.ImageUrl></label>
-            <input type="file" id="imageUrl" asp-for=product.ImageUrl class=form-control />
-            <span asp-validation-for=product.ImageUrl class="text-danger"></span>
+            <input type="file" id="imageUrl" name="file" asp-for=product.ImageUrl class=form-control />
         </div>
-        <div class="mb-3 col-6 w-100">
+        <div class="mb-3">
             <label asp-for=product.CategoryId></label>
-            @* <select asp-for=product.CategoryId asp-items="ViewBag.CategoryList" class=form-select>
-                <option disabled onselect=""> -- Select Category --</option>
-            </select *@
              <select asp-for=product.CategoryId asp-items="Model.CategoryList" class=form-select>
                 <option disabled onselect=""> -- Select Category --</option>
             </select>
             <span asp-validation-for=product.CategoryId class="text-danger"></span>
         </div>
-        <div class="mb-3 col-6 w-100">
+        <div class="mb-3">
             <label asp-for=product.CoverTypeId></label>
             <select asp-for=product.CoverTypeId asp-items="Model.CoverTypeList" class=form-select>
                 <option disabled onselect=""> -- Select Category --</option>
             </select>
-            
-           @*  <select asp-for=product.CoverTypeId asp-items="@(ViewData[" CoverTypeList"] as IEnumerable<SelectListItem> )" class=form-select>
-                <option disabled onselect=""> -- Select Category --</option>
-            </select> *@
             <span asp-validation-for=product.CoverTypeId class="text-danger"></span>
         </div>
         @if (Model.product.Id == 0)
@@ -80,9 +72,8 @@
             <button type="submit" onclick="return ValidateInput()" class="btn btn-primary">Create</button>
         } else
         {
-            <button type="submit" onclick="return ValidateInput()" class="btn btn-secondary">Update</button>
+            <button type="submit" class="btn btn-secondary">Update</button>
         }
-
 
         <a asp-controller="Product" asp-action="Index" class="btn btn-primary">Back To List</a>
     </div>
@@ -99,7 +90,7 @@
                     icon: "error",
                     title: "Oops...",
                     text: "Something went wrong!",
-                    footer: '<a href="#">Why do I have this issue?</a>'
+                    footer: '<a href="">Please upload images</a>'
                 });
                 return false;
             }
