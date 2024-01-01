@@ -39,7 +39,7 @@ namespace BookStore.DataAccess.Repository
                     objFromDb.ImageUrl = product.ImageUrl;
                 }
             }
-            _dbContext.Products.Update(product);
+            //_dbContext.Products.Update(product);
         }
     }
 }

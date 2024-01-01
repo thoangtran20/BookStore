@@ -1,8 +1,33 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<BookStore.Models.Product>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="row pd-3">
+        @foreach (var item in Model)
+        {
+        <div class="col-lg-3 col-md-6">
+            <div class="row p-2">
+                <div class="col-12 p-1" style="border: 1px solid #008cba; border-radius: 5px">
+                    <div class="card">
+                        <img src="@item.ImageUrl" style="max-width: 100%; max-height: 400px;" />
+                        <div class="card-body">
+                            <div class="pl-1">
+                                <p class="card-title h5 text-primary">@item.Title</p>
+                                <p class="card-title text-secondary">@item.Author</p>
+                            </div>
+                            <div class="pl-1">
+                                <p>List Price: <strike>@item.ListPrice.ToString("0.00")</strike></p>
+                            </div>
+                            <div class="pl-1">
+                                <p>List 50: <strike>@item.Price50.ToString("0.00")</strike></p>
+                                <p class="card-title text-secondary">@item.Author</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a asp-action="Details" class="btn btn-primary form-control" asp-route-id="@item">Details</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        }
+    </div>
