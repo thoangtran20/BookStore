@@ -20,8 +20,27 @@ namespace BookStore.Areas.Customer.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Product> ProductList = _unitOfWork.Product.GetAll(includeProperties: "Category");
+            IEnumerable<Product> ProductList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
             return View(ProductList);
+        }
+        public IActionResult Details(int productId)
+        {
+            Product product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == productId, includeProperties: "Category,CoverType");
+
+            if (product == null)
+            {
+                // Handle the case where the product is not found.
+                return NotFound();
+            }
+
+            ShoppingCart cartObj = new ShoppingCart
+            {
+                Product = product,
+                Count = 1,
+                ProductId = productId
+            };
+
+            return View(cartObj);
         }
 
         public IActionResult Privacy()

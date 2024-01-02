@@ -7,7 +7,7 @@
             <div class="row p-2">
                 <div class="col-12 p-1" style="border: 1px solid #008cba; border-radius: 5px">
                     <div class="card">
-                        <img src="@item.ImageUrl" style="max-width: 100%; max-height: 400px;" />
+                        <img src="@item.ImageUrl" />
                         <div class="card-body">
                             <div class="pl-1">
                                 <p class="card-title h5 text-primary">@item.Title</p>
@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div>
-                        <a asp-action="Details" class="btn btn-primary form-control" asp-route-id="@item">Details</a>
+                        <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId=@item.Id>Details</a>
                     </div>
                 </div>
             </div>
