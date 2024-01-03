@@ -4730,13 +4730,27 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0"
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
+          "Microsoft.Extensions.Identity.Stores": "6.0.25"
         },
         "compile": {
           "bin/placeholder/BookStore.Models.dll": {}
         },
         "runtime": {
           "bin/placeholder/BookStore.Models.dll": {}
+        }
+      },
+      "BookStore.Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.UI": "6.0.23"
+        },
+        "compile": {
+          "bin/placeholder/BookStore.Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookStore.Utility.dll": {}
         }
       }
     }
@@ -12679,11 +12693,17 @@
       "type": "project",
       "path": "../Models/BookStore.Models.csproj",
       "msbuildProject": "../Models/BookStore.Models.csproj"
+    },
+    "BookStore.Utility/1.0.0": {
+      "type": "project",
+      "path": "../BookStore.Utility/BookStore.Utility.csproj",
+      "msbuildProject": "../BookStore.Utility/BookStore.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "BookStore.DataAccess >= 1.0.0",
+      "BookStore.Utility >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.25",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.23",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.25",
@@ -12723,6 +12743,9 @@
           "projectReferences": {
             "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore.DataAccess\\BookStore.DataAccess.csproj": {
               "projectPath": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore.DataAccess\\BookStore.DataAccess.csproj"
+            },
+            "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore.Utility\\BookStore.Utility.csproj": {
+              "projectPath": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore.Utility\\BookStore.Utility.csproj"
             }
           }
         }

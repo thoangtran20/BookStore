@@ -61,6 +61,10 @@
       "PackagePath": "staticwebassets\\images\\products\\cd97e500-49c3-4af5-9c67-a15ee3eb7011.jpg"
     },
     {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\company.js",
+      "PackagePath": "staticwebassets\\js\\company.js"
+    },
+    {
       "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\product.js",
       "PackagePath": "staticwebassets\\js\\product.js"
     },

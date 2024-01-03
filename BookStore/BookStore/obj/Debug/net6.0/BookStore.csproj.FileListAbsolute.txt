@@ -575,3 +575,5 @@ D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\runtimes\win-arm\native
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\runtimes\win-arm64\native\e_sqlite3.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\runtimes\win-x64\native\e_sqlite3.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
+D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\BookStore.Utility.dll
+D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\BookStore.Utility.pdb

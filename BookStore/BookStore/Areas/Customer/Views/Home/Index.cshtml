@@ -11,14 +11,13 @@
                         <div class="card-body">
                             <div class="pl-1">
                                 <p class="card-title h5 text-primary">@item.Title</p>
-                                <p class="card-title text-secondary">@item.Author</p>
+                                <p class="card-title text-info">by <b>@item.Author</b></p>
                             </div>
                             <div class="pl-1">
-                                <p>List Price: <strike>@item.ListPrice.ToString("0.00")</strike></p>
+                                <p>List Price: <strike><b>$@item.ListPrice.ToString("0.00")</b></strike></p>
                             </div>
                             <div class="pl-1">
-                                <p>List 50: <strike>@item.Price50.ToString("0.00")</strike></p>
-                                <p class="card-title text-secondary">@item.Author</p>
+                                <p>As low as: <b>$@item.Price100.ToString("0.00")</b></p>
                             </div>
                         </div>
                     </div>

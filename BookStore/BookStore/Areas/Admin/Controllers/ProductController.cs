@@ -114,21 +114,6 @@ namespace BookStore.Areas.Admin.Controllers
             return Json(new {data = productList});
         }
 
-        //public IActionResult Delete(int? id)
-        //{
-        //    if (id == null || id == 0)
-        //    {
-        //        return NotFound();
-        //    }
-        //    var productFromDB = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
-
-        //    if (productFromDB == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(productFromDB);
-        //}
-
         // post
         [HttpDelete]
         public IActionResult DeletePost(int? id)
