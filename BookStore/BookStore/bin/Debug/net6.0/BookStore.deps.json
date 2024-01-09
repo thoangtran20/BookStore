@@ -44,6 +44,7 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.23",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.25",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
+          "Stripe.net": "43.9.0",
           "Microsoft.AspNetCore.Antiforgery.Reference": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "6.0.0.0",
@@ -2703,6 +2704,21 @@
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+        }
+      },
+      "Stripe.net/43.9.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "System.Configuration.ConfigurationManager": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Stripe.net.dll": {
+            "assemblyVersion": "43.9.0.0",
+            "fileVersion": "43.9.0.0"
+          }
+        },
+        "compile": {
+          "lib/net6.0/Stripe.net.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -6593,6 +6609,13 @@
       "sha512": "sha512-lxCZarZdvAsMl2zw9bXHrXK6RxVhB4b23iTFhCOdHFhxfbsxLxWf+ocvswJwR/9Wh/E//ddMi+wJGqUKV7VwoA==",
       "path": "sqlitepclraw.provider.e_sqlite3/2.1.2",
       "hashPath": "sqlitepclraw.provider.e_sqlite3.2.1.2.nupkg.sha512"
+    },
+    "Stripe.net/43.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kx6G3vwCkYd3N+BR3DgisCjHZw3aNwfrLXDlqgC4RrL+CBvZuIxu+2vQ+xenCEJA4/LqJr+Ml9hOx8j7Sl8z4g==",
+      "path": "stripe.net/43.9.0",
+      "hashPath": "stripe.net.43.9.0.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",

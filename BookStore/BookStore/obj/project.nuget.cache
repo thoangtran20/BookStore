@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RJ0x+lGPeF/cn5JCdOdc/d+cpUW3CpfwA399af7tjWEfeeYYIejTW5AmzAPDRK9Q/Y96v2+5Twm+smooP+08zw==",
+  "dgSpecHash": "GPk62a7XMJCodN2HvjueVj0RRWNZVX8lu5z7OroLLPuleH5Y1C6IwUice4VgVGc35qjhI5jnk7zHYX+3QkktFg==",
   "success": true,
   "projectFilePath": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
@@ -189,6 +189,7 @@
     "C:\\Users\\THOANG\\.nuget\\packages\\sqlitepclraw.core\\2.1.2\\sqlitepclraw.core.2.1.2.nupkg.sha512",
     "C:\\Users\\THOANG\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.2\\sqlitepclraw.lib.e_sqlite3.2.1.2.nupkg.sha512",
     "C:\\Users\\THOANG\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.2\\sqlitepclraw.provider.e_sqlite3.2.1.2.nupkg.sha512",
+    "C:\\Users\\THOANG\\.nuget\\packages\\stripe.net\\43.9.0\\stripe.net.43.9.0.nupkg.sha512",
     "C:\\Users\\THOANG\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\THOANG\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\THOANG\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

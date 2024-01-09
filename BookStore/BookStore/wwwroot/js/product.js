@@ -51,7 +51,7 @@ function Delete(url) {
                 url: url,
                 type: "DELETE",
                 success: function (data) {
-
+                    console.log(data);
                     //loadDatatable();
                     debugger;
                     if (data.success) {
