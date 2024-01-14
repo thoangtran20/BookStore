@@ -17,8 +17,24 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\lawn_leaf.jpg",
+      "PackagePath": "staticwebassets\\images\\lawn_leaf.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\order.jpg",
+      "PackagePath": "staticwebassets\\images\\order.jpg"
+    },
+    {
       "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\1fe2b592-439b-4232-af86-2fd916ae875a.jpg",
       "PackagePath": "staticwebassets\\images\\products\\1fe2b592-439b-4232-af86-2fd916ae875a.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\2ee8c9d4-c4e2-4494-89da-83ee10511155.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\2ee8c9d4-c4e2-4494-89da-83ee10511155.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\393e7b18-b166-4330-83d2-ff1e5d55c992.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\393e7b18-b166-4330-83d2-ff1e5d55c992.jpg"
     },
     {
       "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\4973578c-92c3-4393-9da4-afacc4e11f29.jpg",

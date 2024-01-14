@@ -85,7 +85,7 @@
                             about setting up this ASP.NET application to support logging in via external services</a>.
                         </p>
                     </div>
-            }
+                }
                 else
                 {
                     <form id="external-account" asp-page="./ExternalLogin" asp-route-returnurl="@Model.ReturnUrl" method="post" class="form-horizontal">
@@ -98,7 +98,7 @@
                             </p>
                         </div>
                     </form>
-            }
+                }
             }
         </section>
     </div>
@@ -107,7 +107,7 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
     <script>
-         Hide company when user don't choose role company
+        //Hide company when user don't choose role company
         $(document).ready(function () {
             $('#Input_Role').change(function () {
                 var selection = $('#Input_Role Option:Selected').text();
@@ -119,20 +119,5 @@
                 }
             });
         })
-
-        //document.addEventListener('DOMContentLoaded', function () {
-        //    var inputRole = document.getElementById('Input_Role');
-        //    var inputCompanyId = document.getElementById('Input_CompanyId');
-
-        //    inputRole.addEventListener('change', function () {
-        //        var selection = inputRole.options[inputRole.selectedIndex].text;
-
-        //        if (selection !== 'Company') {
-        //            inputCompanyId.style.display = 'none';
-        //        } else {
-        //            inputCompanyId.style.display = 'block';
-        //        }
-        //    });
-        //});
     </script>
 }
