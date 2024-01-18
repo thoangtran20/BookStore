@@ -168,13 +168,6 @@ namespace BookStore.Areas.Customer.Controllers
             else {
                 return RedirectToAction("OrderConfirmation", "Cart", new { id = ShoppingCartVM.OrderHeader.Id });
             }
-
-               
-
-
-            //_unitOfWork.ShoppingCart.RemoveRange(ShoppingCartVM.ListCart);
-            //_unitOfWork.Save();
-            //return RedirectToAction("Index", "Home");
         }
 
         public IActionResult OrderConfirmation(int id)

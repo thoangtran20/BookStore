@@ -28,6 +28,8 @@ namespace BookStore.DataAccess.Repository
             {
                 objFromDb.Title = product.Title;
                 objFromDb.ISBN = product.ISBN;
+                objFromDb.ListPrice = product.ListPrice;
+                objFromDb.Price = product.Price;
                 objFromDb.Price50 = product.Price50;
                 objFromDb.Price100 = product.Price100;
                 objFromDb.Description = product.Description;

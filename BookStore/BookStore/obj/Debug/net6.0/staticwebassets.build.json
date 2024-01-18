@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9X97gNbpHiMlKZGO9S2jC4Pw+v0ybgERJkcs3fPXenY=",
+  "Hash": "1sLiV8t5FrrDlq5//IsvVho4uBWy0SqifjBvrmik8II=",
   "Source": "BookStore",
   "BasePath": "_content/BookStore",
   "Mode": "Default",
@@ -1292,6 +1292,23 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\99c09eef-3f2d-4341-8503-56ef92aff889.jpg"
     },
     {
+      "Identity": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\a4ac7ce2-707e-42a2-819b-ac73e5a4c99c.jpg",
+      "SourceId": "BookStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\",
+      "BasePath": "_content/BookStore",
+      "RelativePath": "images/products/a4ac7ce2-707e-42a2-819b-ac73e5a4c99c.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\a4ac7ce2-707e-42a2-819b-ac73e5a4c99c.jpg"
+    },
+    {
       "Identity": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\b6758639-8a34-4140-87d6-838f33469cc9.jpg",
       "SourceId": "BookStore",
       "SourceType": "Discovered",
@@ -1392,6 +1409,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\company.js"
+    },
+    {
+      "Identity": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\order.js",
+      "SourceId": "BookStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\",
+      "BasePath": "_content/BookStore",
+      "RelativePath": "js/order.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\order.js"
     },
     {
       "Identity": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\product.js",

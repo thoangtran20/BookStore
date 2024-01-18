@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\images\\products\\99c09eef-3f2d-4341-8503-56ef92aff889.jpg"
     },
     {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\a4ac7ce2-707e-42a2-819b-ac73e5a4c99c.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\a4ac7ce2-707e-42a2-819b-ac73e5a4c99c.jpg"
+    },
+    {
       "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\b6758639-8a34-4140-87d6-838f33469cc9.jpg",
       "PackagePath": "staticwebassets\\images\\products\\b6758639-8a34-4140-87d6-838f33469cc9.jpg"
     },
@@ -79,6 +83,10 @@
     {
       "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\company.js",
       "PackagePath": "staticwebassets\\js\\company.js"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\order.js",
+      "PackagePath": "staticwebassets\\js\\order.js"
     },
     {
       "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\product.js",

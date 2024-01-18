@@ -2,12 +2,17 @@
 using BookStore.DataAccess.Repository.IRepository;
 using BookStore.Models;
 using BookStore.Models.ViewModel;
+using BookStore.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Hosting;
 
 namespace BookStore.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_User_Admin)]
+
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -25,7 +30,7 @@ namespace BookStore.Areas.Admin.Controllers
         public IActionResult Upsert(int? id)
         {
             ProductVM productVM = new ProductVM();
-            productVM.product = new Product();
+            productVM.Product = new Product();
             productVM.CategoryList = _unitOfWork.Category.GetAll().Select(
                     u => new SelectListItem()
                     {
@@ -50,61 +55,56 @@ namespace BookStore.Areas.Admin.Controllers
             else
             {
                 // Update product
-                productVM.product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
+                productVM.Product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
+                return View(productVM);
             }
-            return View(productVM);
         }
 
-        // post
+        //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Upsert(ProductVM obj, IFormFile? file)
         {
+
             if (ModelState.IsValid)
             {
-                // upload images
                 string wwwRootPath = _webHostEnvironment.WebRootPath;
                 if (file != null)
                 {
-                    // Delete the old image only if a new image is uploaded
                     string fileName = Guid.NewGuid().ToString();
                     var uploads = Path.Combine(wwwRootPath, @"images\products");
                     var extension = Path.GetExtension(file.FileName);
-                    if (obj.product.ImageUrl != null)
+
+                    if (obj.Product.ImageUrl != null)
                     {
-                        var oldImagePath = Path.Combine(wwwRootPath, obj.product.ImageUrl.TrimStart('\\'));
+                        var oldImagePath = Path.Combine(wwwRootPath, obj.Product.ImageUrl.TrimStart('\\'));
                         if (System.IO.File.Exists(oldImagePath))
                         {
                             System.IO.File.Delete(oldImagePath);
                         }
                     }
 
-                    // Save the new image
                     using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                     {
                         file.CopyTo(fileStreams);
                     }
+                    obj.Product.ImageUrl = @"\images\products\" + fileName + extension;
 
-                    // Update the product with the new image path
-                    obj.product.ImageUrl = @"images\products\" + fileName + extension;
                 }
-
-                if (obj.product.Id == 0)
+                if (obj.Product.Id == 0)
                 {
-                    _unitOfWork.Product.Add(obj.product);
+                    _unitOfWork.Product.Add(obj.Product);
                 }
                 else
                 {
-                    _unitOfWork.Product.Update(obj.product);
+                    _unitOfWork.Product.Update(obj.Product);
                 }
-
                 _unitOfWork.Save();
-                TempData["Success"] = "Product create Successfully";
-                return RedirectToAction("index");
+                TempData["success"] = "Product created successfully";
+                return RedirectToAction("Index");
             }
             return View(obj);
         }
-
 
         #region API_CALLS
         [HttpGet]
@@ -122,7 +122,7 @@ namespace BookStore.Areas.Admin.Controllers
 
             if (obj == null)
             {
-                return NotFound();
+                return Json(new { success = false, message = "Error while deleting" });
             }
             else
             {
