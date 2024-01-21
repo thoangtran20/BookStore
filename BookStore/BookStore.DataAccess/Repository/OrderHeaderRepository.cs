@@ -36,12 +36,12 @@ namespace BookStore.DataAccess.Repository
                 }
             }
         }
-        public void UpdateStripePaymentId(int id, string sessionId, string? paymentIntentId)
+        public void UpdateStripePaymentId(int id, string sessionId, string paymentItentId)
         {
             var orderFromDb = _dbContext.OrderHeaders.FirstOrDefault(u => u.Id == id);
-            
+            orderFromDb.PaymentDate = DateTime.Now;
             orderFromDb.SessionId = sessionId;
-            orderFromDb.PaymentIntentId = paymentIntentId;
-        }   
+            orderFromDb.PaymentIntentId = paymentItentId;
+        }
     }
 }

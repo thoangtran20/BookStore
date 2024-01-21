@@ -18,6 +18,7 @@ namespace BookStore.DataAccess.Repository
         public Repository(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
+            //_dbContext.ShoppingCarts.AsNoTracking().
             this.dbSet = _dbContext.Set<T>();
         }
         public void Add(T entity)
@@ -46,9 +47,19 @@ namespace BookStore.DataAccess.Repository
             return query.ToList();
         }
 
-        public T GetFirstOrDefault(Expression<Func<T, bool>> filter, string? includeProperties = null)
+        public T GetFirstOrDefault(Expression<Func<T, bool>> filter, string? includeProperties = null, bool tracked = true)
         {
-            IQueryable<T> query = dbSet;
+            IQueryable<T> query;
+
+            if (tracked)
+            {
+                query = dbSet;
+            }
+            else
+            {
+                query = dbSet.AsNoTracking();
+            }
+
             if (includeProperties != null)
             {
                 foreach (var item in includeProperties.Split(new char[] {','}, StringSplitOptions.RemoveEmptyEntries))

@@ -35,7 +35,7 @@ namespace BookStore.Areas.Customer.Controllers
             };
             foreach (var cart in ShoppingCartVM.ListCart)
             {
-                cart.Price = GetPriceBaseOnQuatity(cart.Count, cart.Product.ListPrice, cart.Product.Price50, cart.Product.Price100);
+                cart.Price = GetPriceBaseOnQuatity(cart.Count, cart.Product.Price, cart.Product.Price50, cart.Product.Price100);
                 ShoppingCartVM.CartTotal += (cart.Price * cart.Count);
                 ShoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
             }
@@ -66,7 +66,7 @@ namespace BookStore.Areas.Customer.Controllers
 
             foreach (var cart in ShoppingCartVM.ListCart)
             {
-                cart.Price = GetPriceBaseOnQuatity(cart.Count, cart.Product.ListPrice, cart.Product.Price50, cart.Product.Price100);
+                cart.Price = GetPriceBaseOnQuatity(cart.Count, cart.Product.Price, cart.Product.Price50, cart.Product.Price100);
                 ShoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
             }
 
@@ -160,12 +160,11 @@ namespace BookStore.Areas.Customer.Controllers
                 Session session = service.Create(options);
                 _unitOfWork.OrderHeader.UpdateStripePaymentId(ShoppingCartVM.OrderHeader.Id, session.Id, session.PaymentIntentId);
                 _unitOfWork.Save();
-
-
                 Response.Headers.Add("Location", session.Url);
                 return new StatusCodeResult(303);
             } 
-            else {
+            else 
+            {
                 return RedirectToAction("OrderConfirmation", "Cart", new { id = ShoppingCartVM.OrderHeader.Id });
             }
         }
@@ -173,13 +172,14 @@ namespace BookStore.Areas.Customer.Controllers
         public IActionResult OrderConfirmation(int id)
         {
             OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == id);
-            if (orderHeader.PaymentStatus == SD.PaymentStatusDelayedPayment)
+            if (orderHeader.PaymentStatus != SD.PaymentStatusDelayedPayment)
             {
                 var service = new SessionService();
                 Session session = service.Get(orderHeader.SessionId);
                 // check the stripe status
                 if (session.PaymentStatus.ToLower() == "paid")
                 {
+                    _unitOfWork.OrderHeader.UpdateStripePaymentId(id, orderHeader.SessionId, session.PaymentIntentId);
                     _unitOfWork.OrderHeader.UpdateStatus(id, SD.StatusApproved, SD.PaymentStatusApproved);
                     _unitOfWork.Save();
                 }
