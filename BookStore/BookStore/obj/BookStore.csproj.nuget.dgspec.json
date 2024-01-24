@@ -123,9 +123,21 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[6.0.23, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.29.1, )"
             }
           },
           "imports": [
@@ -227,7 +239,7 @@
             },
             "Stripe.net": {
               "target": "Package",
-              "version": "[43.9.0, )"
+              "version": "[43.11.0, )"
             }
           },
           "imports": [

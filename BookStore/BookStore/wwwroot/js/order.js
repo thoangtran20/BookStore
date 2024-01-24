@@ -18,7 +18,7 @@ $(document).ready(function () {
         loadDataTable("approved");
     }
     else if (url.includes("cancelled")) {
-        loadDataTable("cancelled"); // Thêm lựa chọn "cancelled"
+        loadDataTable("cancelled");
     }
     else {
         loadDataTable("all");

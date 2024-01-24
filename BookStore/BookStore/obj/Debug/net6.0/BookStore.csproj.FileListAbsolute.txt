@@ -169,7 +169,6 @@ D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.Drawing.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.Drawing.Primitives.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.Dynamic.Runtime.dll
-D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.Formats.Asn1.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.Globalization.Calendars.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.Globalization.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.Globalization.Extensions.dll
@@ -258,7 +257,6 @@ D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.Security.Pr
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.Security.SecureString.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.ServiceModel.Web.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.ServiceProcess.dll
-D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.Text.Encoding.CodePages.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.Text.Encoding.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.Text.Encoding.Extensions.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\refs\System.Text.Encodings.Web.dll
@@ -578,3 +576,13 @@ D:\ASP.NET_CORE_6.0\BookStore\BookStore\obj\Debug\net6.0\refint\BookStore.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\obj\Debug\net6.0\BookStore.pdb
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\obj\Debug\net6.0\BookStore.genruntimeconfig.cache
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\obj\Debug\net6.0\ref\BookStore.dll
+D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\MailKit.dll
+D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\MimeKit.dll
+D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\System.Formats.Asn1.dll
+D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\SendGrid.dll
+D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\StarkbankEcdsa.dll

@@ -17,7 +17,6 @@
             <div class="container rounded p-2">
                 <div class="row">
                     <div class="col-8 col-lg-8">
-
                         <div class="row pl-2">
                             <h5 class="text-muted">ISBN : @Model.Product.ISBN</h5>
                         </div>
@@ -43,13 +42,13 @@
                                 <div>Price</div>
                             </div>
                             <div class="p-1 col-2 bg-secondary">
-                                <div>@Model.Product.Price50</div>
+                                <div>@Model.Product.Price.ToString("c")</div>
                             </div>
                             <div class="p-1 col-2 bg-secondary">
-                                <div>@Model.Product.Price100</div>
+                                <div>@Model.Product.Price50.ToString("c")</div>
                             </div>
                             <div class="p-1 col-2 bg-secondary">
-                                <div>$$</div>
+                                <div>@Model.Product.Price100.ToString("c")</div>
                             </div>
                         </div>
                         <div class="row pl-2">
@@ -58,7 +57,7 @@
                         <div class="row pl-2">
                             <div class="col-2 text-primary"><h4>Count</h4></div>
                             <div class="col-6"><input asp-for="Count" class="form-control" /></div>
-                        </div>
+                        </div>                    
                     </div>
                     <div class="col-12 col-lg-3 offset-lg-1 text-center">
                         <img src="/@Model.Product.ImageUrl" width="100%" class="rounded" />
