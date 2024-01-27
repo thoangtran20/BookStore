@@ -25,6 +25,12 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+builder.Services.AddAuthentication().AddFacebook(options =>
+{
+    options.AppId = "750440449978339";
+    options.AppSecret = "68676cd4f11a20eba060abc8f38f7f4f";
+    options.CallbackPath = new PathString("/signin-facebook");
+});
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = $"/Identity/Account/Login";

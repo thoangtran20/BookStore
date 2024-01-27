@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BDOn8qsTWZlyhNhq4m7051K2gw95fs2iy7hQsvgZgAtrQ7EShI4dT2mfzOg1JxCKBMiYCo5z8Kl+uikr//cslw==",
+  "dgSpecHash": "eTxjIXWnK/GqVUroSlQZwOd6KouJmhqlvRuJFnUQsPoTHukLHTxIVK0jaEOE/NvBzvvvCu7VxMU0w4V1jplWqQ==",
   "success": true,
   "projectFilePath": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
@@ -62,6 +62,7 @@
     "C:\\Users\\THOANG\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\THOANG\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\THOANG\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\THOANG\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\6.0.25\\microsoft.aspnetcore.authentication.facebook.6.0.25.nupkg.sha512",
     "C:\\Users\\THOANG\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
     "C:\\Users\\THOANG\\.nuget\\packages\\microsoft.aspnetcore.authorization.policy\\2.2.0\\microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512",
     "C:\\Users\\THOANG\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.25\\microsoft.aspnetcore.cryptography.internal.6.0.25.nupkg.sha512",

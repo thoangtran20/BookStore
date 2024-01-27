@@ -191,6 +191,7 @@ namespace BookStore.Areas.Customer.Controllers
            
             List<ShoppingCart> shoppingCart = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId ==
             orderHeader.ApplicationUserId).ToList();
+            HttpContext.Session.Clear();
             _unitOfWork.ShoppingCart.RemoveRange(shoppingCart);
             _unitOfWork.Save();
             return View(id);

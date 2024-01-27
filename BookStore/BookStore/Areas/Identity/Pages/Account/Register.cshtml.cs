@@ -219,6 +219,16 @@ namespace BookStore.Areas.Identity.Pages.Account
                     {
                         await _signInManager.SignInAsync(user, isPersistent: false);
                         return LocalRedirect(returnUrl);
+                        //if (User.IsInRole(SD.Role_User_Admin))
+                        //{
+                        //    TempData["success"] = "New User Created Successfully!!";
+                        //    return Page();
+                        //}
+                        //else
+                        //{
+                        //    await _signInManager.SignInAsync(user, isPersistent: false);
+                        //}
+                        //return LocalRedirect(returnUrl);
                     }
                 }
                 foreach (var error in result.Errors)
