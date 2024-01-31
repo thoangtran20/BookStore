@@ -71,7 +71,7 @@ namespace BookStore.Areas.Customer.Controllers
                 _unitOfWork.ShoppingCart.IncrementCount(cartObj, shoppingCart.Count);
                 _unitOfWork.Save();
             }
-
+            TempData["success"] = "Cart updated successfully";
             return RedirectToAction(nameof(Index));
         }
 

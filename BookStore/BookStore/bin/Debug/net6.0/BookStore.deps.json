@@ -37,6 +37,7 @@
           "BookStore.DataAccess": "1.0.0",
           "BookStore.Utility": "1.0.0",
           "Microsoft.AspNetCore.Authentication.Facebook": "6.0.25",
+          "Microsoft.AspNetCore.Authentication.Google": "6.0.25",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.25",
           "Microsoft.AspNetCore.Identity.UI": "6.0.23",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "6.0.25",
@@ -968,6 +969,17 @@
         },
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/6.0.25": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "6.0.25.0",
+            "fileVersion": "6.0.2523.52315"
+          }
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authorization/2.2.0": {
@@ -3686,6 +3698,7 @@
       "BookStore.DataAccess/1.0.0": {
         "dependencies": {
           "BookStore.Models": "1.0.0",
+          "BookStore.Utility": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.25",
           "Microsoft.EntityFrameworkCore": "6.0.25",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.25",
@@ -5836,6 +5849,13 @@
       "sha512": "sha512-0TFj6JTE6qU2qxuy4PDJjkN0JTM57ApgTHmnTEWoFWKVpGgtAUOyqqbUiQ2s+DaFTZ9laOiRjW6gVYEgTD4M3g==",
       "path": "microsoft.aspnetcore.authentication.facebook/6.0.25",
       "hashPath": "microsoft.aspnetcore.authentication.facebook.6.0.25.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/6.0.25": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-obPAt1SM7VX7GwTjdR318RA9sei/oucn8Pu2ZxAnpCwYtYFU/BC9kyE0l3/oSkg5cfGngJn3i88dqDEagqZ+6g==",
+      "path": "microsoft.aspnetcore.authentication.google/6.0.25",
+      "hashPath": "microsoft.aspnetcore.authentication.google.6.0.25.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/2.2.0": {
       "type": "package",

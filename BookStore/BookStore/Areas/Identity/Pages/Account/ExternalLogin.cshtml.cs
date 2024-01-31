@@ -1,19 +1,17 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-#nullable disable
-
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Encodings.Web;
-using BookStore.Models;
-using BookStore.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using BookStore.Models;
+using BookStore.Utility;
 
 namespace BookStore.Areas.Identity.Pages.Account
 {
@@ -87,9 +85,7 @@ namespace BookStore.Areas.Identity.Pages.Account
             public string? City { get; set; }
             public string? State { get; set; }
             public string? PostalCode { get; set; }
-            [StringLength(10, MinimumLength = 10, ErrorMessage = "PhoneNumber must be exactly 10 characters.")]
             public string? PhoneNumber { get; set; }
-
         }
 
         public IActionResult OnGet() => RedirectToPage("./Login");
@@ -164,11 +160,10 @@ namespace BookStore.Areas.Identity.Pages.Account
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 user.StreetAddress = Input.StreetAddress;
                 user.City = Input.City;
+                user.State = Input.State;
                 user.PostalCode = Input.PostalCode;
                 user.Name = Input.Name;
                 user.PhoneNumber = Input.PhoneNumber;
-                user.State = Input.State;
-
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

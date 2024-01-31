@@ -120,7 +120,7 @@ namespace BookStore.Areas.Identity.Pages.Account
             public IEnumerable<SelectListItem> RoleList { get; set; }
 
             // Company List
-            public int CompanyId { get; set; }
+            public int? CompanyId { get; set; }
             [ValidateNever]
             public IEnumerable<SelectListItem> CompanyList { get; set; }
 
@@ -129,13 +129,13 @@ namespace BookStore.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
-            if (!_roleManager.RoleExistsAsync(SD.Role_User_Admin).GetAwaiter().GetResult())
-            {
-                _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Admin)).GetAwaiter().GetResult();
-                _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Employee)).GetAwaiter().GetResult();
-                _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Indi)).GetAwaiter().GetResult();
-                _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Comp)).GetAwaiter().GetResult();
-            }
+            //if (!_roleManager.RoleExistsAsync(SD.Role_User_Admin).GetAwaiter().GetResult())
+            //{
+            //    _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Admin)).GetAwaiter().GetResult();
+            //    _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Employee)).GetAwaiter().GetResult();
+            //    _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Indi)).GetAwaiter().GetResult();
+            //    _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Comp)).GetAwaiter().GetResult();
+            //}
         
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -217,18 +217,18 @@ namespace BookStore.Areas.Identity.Pages.Account
                     }
                     else
                     {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
-                        //if (User.IsInRole(SD.Role_User_Admin))
-                        //{
-                        //    TempData["success"] = "New User Created Successfully!!";
-                        //    return Page();
-                        //}
-                        //else
-                        //{
-                        //    await _signInManager.SignInAsync(user, isPersistent: false);
-                        //}
+                        //await _signInManager.SignInAsync(user, isPersistent: false);
                         //return LocalRedirect(returnUrl);
+                        if (User.IsInRole(SD.Role_User_Admin))
+                        {
+                            TempData["success"] = "New User Created Successfully!!";
+                            return Page();
+                        }
+                        else
+                        {
+                            await _signInManager.SignInAsync(user, isPersistent: false);
+                        }
+                        return LocalRedirect(returnUrl);
                     }
                 }
                 foreach (var error in result.Errors)
