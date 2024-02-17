@@ -22,4 +22,18 @@
 
 @section Scripts{
     <script src="~/js/user.js"></script>
+    <script>
+        //Hide company when user don't choose role company
+        $(document).ready(function () {
+            $('#Input_Role').change(function () {
+                var selection = $('#Input_Role Option:Selected').text();
+                //console.log(selection);
+                if (selection != 'Company') {
+                    $('#ApplicationUser.CompanyId').hide();
+                } else {
+                    $('#ApplicationUser.CompanyId').show();
+                }
+            });
+        })
+    </script>
 }
