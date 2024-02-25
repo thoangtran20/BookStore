@@ -2,7 +2,7 @@
 
 <form method="post" asp-action="Upsert" enctype="multipart/form-data">
     <input asp-for="Product.Id" hidden />
-    <input asp-for="Product.ImageUrl" hidden />
+    @* <input asp-for="Product.ImageUrl" hidden /> *@
 
     <div class="border p-3 mt-4">
         <div class="row pb-2">
@@ -58,8 +58,8 @@
         </div>
 
         <div class="mb-3">
-            <label asp-for="Product.ImageUrl"></label>
-            <input type="file" id="imageUrl" name="file" class="form-control" />
+            <label asp-for="Product.ProductImages"></label>
+            <input type="file" id="imageUrl" name="files" class="form-control" multiple />
         </div>
         <div class="mb-3">
             <label asp-for="Product.CategoryId"></label>
@@ -84,6 +84,25 @@
         }
 
         <a asp-controller="Product" asp-action="Index" class="btn btn-primary">Back To List</a>
+
+        <div class="row py-2">
+            @if (Model.Product.ProductImages != null)
+            {
+                foreach (var images in Model.Product.ProductImages)
+                {
+                    <div class="col-md-2 mb-3">
+                        <div class="border p-1 m-2 text-center">
+                            <img src="@images.ImageUrl" width="100%"
+                                 style="border-radius: 5px; border: 1px solid #bbb9b9" />
+                                 <a asp-action="DeleteImage" class="btn btn-danger" asp-route-imageId="@images.Id">
+                                     <i class="bi bi-strash-fill"></i> Delete
+                                 </a>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+      
     </div>
 </form>
 

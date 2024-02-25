@@ -30,10 +30,11 @@ namespace BookStore.DataAccess.Repository
                 objFromDb.CategoryId = product.CategoryId;
                 objFromDb.Author = product.Author;
                 objFromDb.CoverTypeId = product.CoverTypeId;
-                if (product.ImageUrl != null)
-                {
-                    objFromDb.ImageUrl = product.ImageUrl;
-                }
+                objFromDb.ProductImages = product.ProductImages;
+                //if (product.ImageUrl != null)
+                //{
+                //    objFromDb.ImageUrl = product.ImageUrl;
+                //}
             }
             //_dbContext.Products.Update(product);
         }

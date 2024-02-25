@@ -89,6 +89,58 @@
       "PackagePath": "staticwebassets\\images\\products\\f2bce29c-6f1a-423d-b556-88f5091fdc66.jpg"
     },
     {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\product-10\\8953f452-e715-4b71-abfa-6d563e07359d.webp",
+      "PackagePath": "staticwebassets\\images\\products\\product-10\\8953f452-e715-4b71-abfa-6d563e07359d.webp"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\product-10\\e82e7144-b62d-46c8-a9ae-d02fa1058679.webp",
+      "PackagePath": "staticwebassets\\images\\products\\product-10\\e82e7144-b62d-46c8-a9ae-d02fa1058679.webp"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\product-11\\53639861-4d3d-482d-8441-2a1a40fa4593.webp",
+      "PackagePath": "staticwebassets\\images\\products\\product-11\\53639861-4d3d-482d-8441-2a1a40fa4593.webp"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\product-11\\55084a5c-e2e6-43af-8e2d-586686dad6e2.webp",
+      "PackagePath": "staticwebassets\\images\\products\\product-11\\55084a5c-e2e6-43af-8e2d-586686dad6e2.webp"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\product-13\\dca491f0-6e3b-40a2-a892-af54536a90c2.webp",
+      "PackagePath": "staticwebassets\\images\\products\\product-13\\dca491f0-6e3b-40a2-a892-af54536a90c2.webp"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\product-14\\7ab00118-149f-4657-b0d8-a2ae9e916df2.webp",
+      "PackagePath": "staticwebassets\\images\\products\\product-14\\7ab00118-149f-4657-b0d8-a2ae9e916df2.webp"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\product-15\\eaf06002-b3a9-4650-82e9-d17b6733d795.webp",
+      "PackagePath": "staticwebassets\\images\\products\\product-15\\eaf06002-b3a9-4650-82e9-d17b6733d795.webp"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\product-15\\f3457e53-47a0-4d25-b429-b1b04d770709.webp",
+      "PackagePath": "staticwebassets\\images\\products\\product-15\\f3457e53-47a0-4d25-b429-b1b04d770709.webp"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\product-16\\91dd6d4a-80e0-4c89-b4e0-00b36ff315ee.webp",
+      "PackagePath": "staticwebassets\\images\\products\\product-16\\91dd6d4a-80e0-4c89-b4e0-00b36ff315ee.webp"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\product-16\\cb3179c9-fe44-49d5-86c8-0f3488e24ef7.webp",
+      "PackagePath": "staticwebassets\\images\\products\\product-16\\cb3179c9-fe44-49d5-86c8-0f3488e24ef7.webp"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\product-17\\33a0a4cc-818f-480c-8b2b-70c62bfa83fa.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\product-17\\33a0a4cc-818f-480c-8b2b-70c62bfa83fa.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\product-17\\a809d6f4-2cd5-4ca2-ae19-e8c7c4beaadb.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\product-17\\a809d6f4-2cd5-4ca2-ae19-e8c7c4beaadb.jpg"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\products\\product-8\\fbd19235-c45c-4324-adb5-1bf6e2877abe.webp",
+      "PackagePath": "staticwebassets\\images\\products\\product-8\\fbd19235-c45c-4324-adb5-1bf6e2877abe.webp"
+    },
+    {
       "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\company.js",
       "PackagePath": "staticwebassets\\js\\company.js"
     },

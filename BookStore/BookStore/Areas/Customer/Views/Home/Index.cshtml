@@ -1,20 +1,28 @@
 ﻿@model IEnumerable<BookStore.Models.Product>
 
-    <div class="row pb-3">
+    <div class="row py-3">
         @foreach (var item in Model)
         {
         <div class="col-lg-3 col-md-6">
             <div class="row p-2">
                 <div class="col-12 p-1" style="border: 1px solid #008cba; border-radius: 5px">
                     <div class="card ">
-                        <img src="@item.ImageUrl" />
+                        @if (item.ProductImages != null && item.ProductImages.Count() > 0)
+                        {
+                            <img src="@item.ProductImages.FirstOrDefault().ImageUrl" class="card-img-top rounded" />
+                        }
+                        else
+                        {
+                            <img src="https://placehold.co/500x600/png" class="card-img-top rounded" />
+                        }
+                        @* <img src="@item.ImageUrl" /> *@
                         <div class="card-body">
                             <div class="pl-1">
                                 <p class="card-title h5 text-dark opacity-75 text-uppercase text-center">@item.Title</p>
                                 <p class="card-title text-warning text-center">by <b>@item.Author</b></p>
                             </div>
                             <div class="pl-1">
-                                <p class="text-dark text-opacity-75 text-center mb-0">List Price: <strike><b>$@item.ListPrice.ToString("0.00")</b></strike></p>
+                                    <p class="text-dark text-opacity-75 text-center mb-0">List Price: <strike><b>$@item.ListPrice.ToString("0.00")</b></strike></p>
                             </div>
                             <div class="pl-1">
                                 <p class="text-dark text-opacity-75 text-center">As low as: <b>$@item.Price100.ToString("0.00")</b></p>

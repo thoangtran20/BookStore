@@ -22,12 +22,12 @@ namespace BookStore.Areas.Customer.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Product> ProductList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
+            IEnumerable<Product> ProductList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType,ProductImages");
             return View(ProductList);
         }
         public IActionResult Details(int productId)
         {
-            Product product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == productId, includeProperties: "Category,CoverType");
+            Product product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == productId, includeProperties: "Category,CoverType,ProductImages");
 
             if (product == null)
             {
