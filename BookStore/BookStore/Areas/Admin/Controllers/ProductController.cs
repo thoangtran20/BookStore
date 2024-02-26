@@ -108,18 +108,6 @@ namespace BookStore.Areas.Admin.Controllers
                     _unitOfWork.Product.Update(productVM.Product);
                     _unitOfWork.Save();
 
-                    //if (obj.Product.ImageUrl != null)
-                    //{
-                    //    var oldImagePath = Path.Combine(wwwRootPath, obj.Product.ImageUrl.TrimStart('\\'));
-                    //    if (System.IO.File.Exists(oldImagePath))
-                    //    {
-                    //        System.IO.File.Delete(oldImagePath);
-                    //    }
-                    //}
-
-
-                    //obj.Product.ImageUrl = @"\images\products\" + fileName + extension;
-
                 }
 
                 TempData["success"] = "Product created/updated successfully";
@@ -179,16 +167,6 @@ namespace BookStore.Areas.Admin.Controllers
             }
             else
             {
-                //if (  .ImageUrl != null)
-                //{
-                //    string wwwRootPath = _webHostEnvironment.WebRootPath;
-                //    var oldImagePath = Path.Combine(wwwRootPath, obj.ImageUrl.TrimStart('\\'));
-                //    if (System.IO.File.Exists(oldImagePath))
-                //    {
-                //        System.IO.File.Delete(oldImagePath);
-                //    }
-                //}
-
                 string productPath = @"images\products\product-" + id;
                 string finalPath = Path.Combine(_webHostEnvironment.WebRootPath, productPath);
 

@@ -3,6 +3,7 @@ using BookStore.Models;
 using BookStore.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Diagnostics;
 using System.Security.Claims;
 
@@ -20,10 +21,72 @@ namespace BookStore.Areas.Customer.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string searchString, int? categoryId, string sortOrder)
         {
-            IEnumerable<Product> ProductList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType,ProductImages");
+            IEnumerable<Product> ProductList;
+
+            if (!string.IsNullOrEmpty(searchString) || categoryId.HasValue)
+            {
+                ProductList = _unitOfWork.Product.GetAll(
+                    filter: p => p.Title.Contains(searchString) || p.Author.Contains(searchString)
+                        || (!categoryId.HasValue || p.CategoryId == categoryId),
+                    includeProperties: "Category,CoverType,ProductImages"
+                );
+            }
+            else
+            {
+                ProductList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType,ProductImages");
+            }
+
+            // Sorting logic
+            switch (sortOrder)
+            {
+                case "price_asc":
+                    ProductList = ProductList.OrderBy(p => p.Price);
+                    break;
+                case "price_desc":
+                    ProductList = ProductList.OrderByDescending(p => p.Price);
+                    break;
+                case "title_asc":
+                    ProductList = ProductList.OrderBy(p => p.Title);
+                    break;
+                case "title_desc":
+                    ProductList = ProductList.OrderByDescending(p => p.Title);
+                    break;
+                case "author_asc":
+                    ProductList = ProductList.OrderBy(p => p.Author);
+                    break;
+                case "author_desc":
+                    ProductList = ProductList.OrderByDescending(p => p.Author);
+                    break;
+                case "category_asc":
+                    ProductList = ProductList.OrderBy(p => p.Category);
+                    break;
+                case "category_desc":
+                    ProductList = ProductList.OrderByDescending(p => p.Category);
+                    break;
+                default:
+                    // Default sorting
+                    ProductList = ProductList.OrderBy(p => p.Id);
+                    break;
+            }
+
+            // Fetch all categories
+            var categories = _unitOfWork.Category.GetAll();
+
+            // Pass categories and selected category to the view
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            ViewBag.SelectedCategory = categoryId?.ToString();
+
+            // Set ViewBag for sorting links
+            ViewBag.PriceSortParam = string.IsNullOrEmpty(sortOrder) ? "price_desc" : "";
+            ViewBag.TitleSortParam = sortOrder == "title_asc" ? "title_desc" : "title_asc";
+            ViewBag.PriceSortParam = sortOrder == "author_asc" ? "author_desc" : "author_asc";
+            ViewBag.PriceSortParam = sortOrder == "category_asc" ? "category_desc" : "category_asc";
+
             return View(ProductList);
+
+            
         }
         public IActionResult Details(int productId)
         {
