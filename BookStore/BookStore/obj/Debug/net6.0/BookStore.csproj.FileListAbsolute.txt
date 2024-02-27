@@ -589,3 +589,5 @@ D:\ASP.NET_CORE_6.0\BookStore\BookStore\obj\Debug\net6.0\refint\BookStore.dll
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\obj\Debug\net6.0\BookStore.pdb
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\obj\Debug\net6.0\BookStore.genruntimeconfig.cache
 D:\ASP.NET_CORE_6.0\BookStore\BookStore\obj\Debug\net6.0\ref\BookStore.dll
+D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\PagedList.dll
+D:\ASP.NET_CORE_6.0\BookStore\BookStore\bin\Debug\net6.0\PagedList.Mvc.dll

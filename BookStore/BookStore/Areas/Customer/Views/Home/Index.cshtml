@@ -61,7 +61,7 @@
                                     <p class="card-title text-warning text-center">by <b>@item.Author</b></p>
                                 </div>
                                 <div class="pl-1">
-                                    <p class="text-dark text-opacity-75 text-center mb-0">List Price: <strike><b>$@item.ListPrice.ToString("0.00")</b></strike></p>
+                                    <p class="text-opacity-75 text-center mb-0 text-danger">List Price: <strike><b>$@item.ListPrice.ToString("0.00")</b></strike></p>
                                 </div>
                                 <div class="pl-1">
                                     <p class="text-dark text-opacity-75 text-center">As low as: <b>$@item.Price100.ToString("0.00")</b></p>
@@ -82,3 +82,33 @@
         <p class="text-danger font-weight-bold fs-25">No products found.</p>
     }
 </div>
+
+<div class="row justify-content-center">
+    <div class="col-md-12">
+        <nav>
+            <ul class="pagination justify-content-center text-primary">
+                @if (ViewBag.CurrentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Index", new { currentPage = ViewBag.CurrentPage - 1, searchString = ViewBag.SearchString, categoryId = ViewBag.SelectedCategory })">&laquo; Previous</a>
+                    </li>
+                }
+
+                @for (int i = 1; i <= ViewBag.PageCount; i++)
+                {
+                    <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                        <a class="page-link" href="@Url.Action("Index", new { currentPage = i, searchString = ViewBag.SearchString, categoryId = ViewBag.SelectedCategory })">@i</a>
+                    </li>
+                }
+
+                @if (ViewBag.CurrentPage < ViewBag.PageCount)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="@Url.Action("Index", new { currentPage = ViewBag.CurrentPage + 1, searchString = ViewBag.SearchString, categoryId = ViewBag.SelectedCategory })">Next &raquo;</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+</div>
+    

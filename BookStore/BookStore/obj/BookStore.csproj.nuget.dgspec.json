@@ -252,6 +252,10 @@
               "target": "Package",
               "version": "[6.0.16, )"
             },
+            "PagedList.Mvc": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
             "Stripe.net": {
               "target": "Package",
               "version": "[43.11.0, )"
