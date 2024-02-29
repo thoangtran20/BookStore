@@ -17,10 +17,6 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\lawn_leaf.jpg",
-      "PackagePath": "staticwebassets\\images\\lawn_leaf.jpg"
-    },
-    {
       "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\images\\order.jpg",
       "PackagePath": "staticwebassets\\images\\order.jpg"
     },
@@ -165,8 +161,16 @@
       "PackagePath": "staticwebassets\\images\\products\\product-8\\1065be9b-fa4c-40bb-b20d-a2c9cb6c58fb.webp"
     },
     {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\category.js",
+      "PackagePath": "staticwebassets\\js\\category.js"
+    },
+    {
       "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\company.js",
       "PackagePath": "staticwebassets\\js\\company.js"
+    },
+    {
+      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\coverType.js",
+      "PackagePath": "staticwebassets\\js\\coverType.js"
     },
     {
       "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\order.js",
@@ -175,10 +179,6 @@
     {
       "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\product.js",
       "PackagePath": "staticwebassets\\js\\product.js"
-    },
-    {
-      "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
       "Id": "D:\\ASP.NET_CORE_6.0\\BookStore\\BookStore\\wwwroot\\js\\user.js",

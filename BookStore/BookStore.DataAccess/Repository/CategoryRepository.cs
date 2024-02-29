@@ -13,6 +13,11 @@ namespace BookStore.DataAccess.Repository
             _dbContext = dbContext;
         }
 
+        public bool IsDisplayOrderExists(int displayOrder)
+        {
+            return _dbContext.Categories.Any(c => c.DisplayOrder == displayOrder);
+        }
+
         public void Update(Category category)
         {
             _dbContext.Categories.Update(category);

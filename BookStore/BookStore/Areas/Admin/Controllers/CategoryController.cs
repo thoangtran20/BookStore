@@ -4,6 +4,7 @@ using BookStore.Models;
 using BookStore.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace BookStore.Areas.Admin.Controllers
 {
@@ -20,86 +21,66 @@ namespace BookStore.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<Category> objCategoryList = _unitOfWork.Category.GetAll();
-            return View(objCategoryList);
-        }
-        public IActionResult Create()
-        {
             return View();
         }
-
-        // post
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create(Category obj)
+        public IActionResult Upsert(int? id)
         {
-            if (obj.Name == obj.DisplayOrder.ToString())
-            {
-                ModelState.AddModelError("name", "The Name must not same DisplayOrder");
-            }
-            if (ModelState.IsValid)
-            {
-                _unitOfWork.Category.Add(obj);
-                _unitOfWork.Save();
-                TempData["Success"] = "Category Create Successfully";
-                return RedirectToAction("index");
-            }
-            return View(obj);
-        }
+            Category category = new Category();
 
-        public IActionResult Edit(int? id)
-        {
             if (id == null || id == 0)
             {
-                return NotFound();
+                // Create Category
+                return View(category);
             }
-            //var categoryFromDB = _dbContext.Categories.Find(id);
-            var categoryFromDB = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
-
-            if (categoryFromDB == null)
+            else
             {
-                return NotFound();
+                // Update Category
+                category = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
             }
-            return View(categoryFromDB);
+            return View(category);
         }
 
         // post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Category obj)
+        public IActionResult Upsert(Category obj)
         {
             if (obj.Name == obj.DisplayOrder.ToString())
             {
                 ModelState.AddModelError("name", "The Name must not same DisplayOrder");
             }
+            if (_unitOfWork.Category.IsDisplayOrderExists(obj.DisplayOrder))
+            {
+                ModelState.AddModelError("DisplayOrder", "DisplayOrder already exists");
+            }
             if (ModelState.IsValid)
             {
-                _unitOfWork.Category.Update(obj);
+                if (obj.Id == 0)
+                {
+                    _unitOfWork.Category.Add(obj);
+                }
+                else
+                {
+                    _unitOfWork.Category.Update(obj);
+                }
+
                 _unitOfWork.Save();
-                TempData["Success"] = "Category Update Successfully";
+                TempData["Success"] = "Category created/updated Successfully";
                 return RedirectToAction("index");
             }
             return View(obj);
         }
 
-        public IActionResult Delete(int? id)
+        #region API_CALLS
+        [HttpGet]
+        public IActionResult GetAll()
         {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-            var categoryFromDB = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
-
-            if (categoryFromDB == null)
-            {
-                return NotFound();
-            }
-            return View(categoryFromDB);
+            var categoryList = _unitOfWork.Category.GetAll();
+            return Json(new { data = categoryList });
         }
 
         // post
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpDelete]
         public IActionResult DeletePost(int? id)
         {
             var obj = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
@@ -112,10 +93,9 @@ namespace BookStore.Areas.Admin.Controllers
             {
                 _unitOfWork.Category.Remove(obj);
                 _unitOfWork.Save();
-                TempData["Success"] = "Category Delete Successfully";
-                return RedirectToAction("index");
+                return Json(new { success = true, message = "Delete Successful" });
             }
-            return View(obj);
         }
+        #endregion
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using PagedList;
 using System.Diagnostics;
+using System.Linq.Expressions;
 using System.Security.Claims;
 
 namespace BookStore.Areas.Customer.Controllers
@@ -21,16 +22,25 @@ namespace BookStore.Areas.Customer.Controllers
             _logger = logger;
             _unitOfWork = unitOfWork;
         }
-
-
         public IActionResult Index(string searchString, int? categoryId, string sortOrder, int? currentPage)
         {
             IEnumerable<Product> ProductList;
 
-            if (!string.IsNullOrEmpty(searchString)) {
-                ProductList = _unitOfWork.Product.GetAll(
-                   filter: p => p.Title.Contains(searchString) || p.Author.Contains(searchString),
-                   includeProperties: "Category,CoverType,ProductImages"
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                if (categoryId.HasValue)
+                {
+                    ProductList = _unitOfWork.Product.GetAll(
+                        filter: p => (p.Title.Contains(searchString) ||
+                                     p.Author.Contains(searchString)) &&
+                                     p.CategoryId == categoryId,
+                        includeProperties: "Category,CoverType,ProductImages"
+                    );
+                }
+                else
+                    ProductList = _unitOfWork.Product.GetAll(
+                        filter: p => p.Title.Contains(searchString) || p.Author.Contains(searchString),
+                        includeProperties: "Category,CoverType,ProductImages"
                );
             }
             else if (categoryId.HasValue)
@@ -40,20 +50,11 @@ namespace BookStore.Areas.Customer.Controllers
                     includeProperties: "Category,CoverType,ProductImages"
                 );
             }
-            else if (!string.IsNullOrEmpty(searchString) && categoryId.HasValue)
-            {
-                ProductList = _unitOfWork.Product.GetAll(
-                    filter: p => (string.IsNullOrEmpty(searchString) || p.Title.Contains(searchString) || p.Author.Contains(searchString)) &&
-                            (!categoryId.HasValue || p.CategoryId == categoryId),
-                    includeProperties: "Category,CoverType,ProductImages"
-                );
-            }
             else
             {
                 ProductList = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType,ProductImages");
             }
 
-            // Sorting logic
             switch (sortOrder)
             {
                 case "price_asc":
@@ -92,7 +93,7 @@ namespace BookStore.Areas.Customer.Controllers
             int pageCount = (int)Math.Ceiling(ProductList.Count() / (double)pageSize);
             
             // Use PagedList Package
-            //var pagedProductList = ProductList.ToPagedList(pageNumber, pageSize);
+            // var pagedProductList = ProductList.ToPagedList(pageNumber, pageSize);
 
             // Non Use PagedList Package
             var pagedProductList = ProductList.Skip((pageNumber - 1) * pageSize).Take(pageSize);

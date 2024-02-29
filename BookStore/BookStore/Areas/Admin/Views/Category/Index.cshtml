@@ -6,36 +6,22 @@
             <h2 class="text-primary">Category List</h2>
         </div>
         <div class="col-6 text-end">
-            <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
+            <a asp-controller="Category" asp-action="Upsert" class="btn btn-primary">
                 <i class="bi bi-plus-circle"></i> &nbsp; Create New Category
             </a>
         </div>
     </div>
     <br />
     <br />
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped" id="tblData">
         <thead>
             <th>Category Name</th>
             <th>Category Order</th>
+            <th></th>
         </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.Name</td>
-                    <td>@item.DisplayOrder</td>
-                    <td>
-                        <div>
-                            <a class="btn btn-primary" asp-controller="Category" asp-action="Edit" asp-route-id=@item.Id>
-                                <i class="bi bi-pencil"></i>
-                            </a>
-                            <a class="btn btn-danger" asp-controller="Category" asp-action="Delete" asp-route-id=@item.Id>
-                                <i class="bi bi-trash"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            }
-        </tbody>
     </table>
 </div>
+
+@section Scripts{
+    <script src="~/js/category.js"></script>
+}

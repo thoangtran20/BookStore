@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -38,4 +38,11 @@ body {
 }
 .custom-link:hover {
     text-decoration: underline;
+}
+
+.icon-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px; /* Điều chỉnh khoảng cách giữa icon và input */
 }

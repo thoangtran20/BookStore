@@ -14,11 +14,9 @@ namespace BookStore.Areas.Admin.Controllers
     public class CompanyController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-        private IWebHostEnvironment _webHostEnvironment;
-        public CompanyController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
+        public CompanyController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Index()
         {
@@ -30,12 +28,12 @@ namespace BookStore.Areas.Admin.Controllers
 
             if (id == null || id == 0)
             {
-                // Create product
+                // Create company
                 return View(company);
             }
             else
             {
-                // Update product
+                // Update company
                 company = _unitOfWork.Company.GetFirstOrDefault(u => u.Id == id);
             }
             return View(company);
@@ -44,7 +42,7 @@ namespace BookStore.Areas.Admin.Controllers
         // post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upsert(Company obj, IFormFile? file)
+        public IActionResult Upsert(Company obj)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +56,7 @@ namespace BookStore.Areas.Admin.Controllers
                 }
 
                 _unitOfWork.Save();
-                TempData["Success"] = "Company create Successfully";
+                TempData["Success"] = "Company created/updated Successfully";
                 return RedirectToAction("index");
             }
             return View(obj);

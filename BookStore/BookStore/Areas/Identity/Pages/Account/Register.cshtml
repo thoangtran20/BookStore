@@ -45,11 +45,21 @@
                         <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
                         <label asp-for="Input.Password" class="ms-2 text-muted">Password</label>
                         <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        <div class="icon-container" style="margin-right: 10px;" onclick="togglePassword()">
+                            <span class="input-group-text">
+                                <i class="bi bi-eye-fill"></i>
+                            </span>
+                        </div>
                     </div>
                     <div class="form-floating mb-3 col-md-6">
                         <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
                         <label asp-for="Input.ConfirmPassword" class="ms-2 text-muted">Confirm Password</label>
                         <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        <div class="icon-container" style="margin-right: 10px;" onclick="toggleConfirmPassword()">
+                            <span class="input-group-text">
+                                <i class="bi bi-eye-fill"></i>
+                            </span>
+                        </div>
                     </div>
 
                     <div class="form-floating mb-3 col-md-6">
@@ -148,5 +158,31 @@
                 }
             });
         })
+        function togglePassword() {
+            var passwordField = document.getElementById('Input_Password');
+            var passwordToggle = document.querySelector('.input-group-text i')
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                passwordToggle.classList.remove('bi-eye-fill');
+                passwordToggle.classList.add('bi-eye-slash-fill');
+            } else {
+                passwordField.type = 'password';
+                passwordToggle.classList.remove('bi-eye-slash-fill');
+                passwordToggle.classList.add('bi-eye-fill');
+            }
+        }
+          function toggleConfirmPassword() {
+            var confirmPasswordField = document.getElementById('Input_ConfirmPassword');
+            var confirmPasswordToggle = document.querySelector('.input-group-text i')
+            if (confirmPasswordField.type === 'password') {
+                confirmPasswordField.type = 'text';
+                confirmPasswordToggle.classList.remove('bi-eye-fill');
+                confirmPasswordToggle.classList.add('bi-eye-slash-fill');
+            } else {
+                confirmPasswordField.type = 'password';
+                confirmPasswordToggle.classList.remove('bi-eye-slash-fill');
+                confirmPasswordToggle.classList.add('bi-eye-fill');
+            }
+        }
     </script>
 }

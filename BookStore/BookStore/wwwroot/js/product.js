@@ -3,8 +3,6 @@ $(document).ready(function () {
    loadDatatable(); 
 });
 
-//let table = new DataTable('#myTable');
-
 function loadDatatable() {
    dataTable = $('#tblData').DataTable({
         "ajax": {
